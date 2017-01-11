@@ -74,11 +74,10 @@ else
                 field_x = num2str(i);
                 field_y = num2str(j);
                 field_code = num2str(values.Minefield(i,j));
-                if field_code == '0'
-                    field_code = '';
-                end
                 color = 'black';
                 switch values.Minefield(i,j)
+                    case 0
+                        field_code = '';
                     case 1
                         color = 'blue';
                     case 2
