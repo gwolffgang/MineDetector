@@ -1,13 +1,17 @@
 function initilize_game(start_x, start_y)
 %INITILIZE_GAME Summary of this function goes here
-%   Detailed explanation goes here
+%   Erstellt bei "Erst-Klick" das Minen-Feld und startet den Timer.
 
     global values handles;
     
     values.game_over = false;
     values.Minefield = zeros(values.height, values.width);
     values.fields_to_find = values.height * values.width - values.mines;
+    values.Mines_left=values.mines;
     while 1
+       if values.User == 1
+          close(handles.fig_user);
+       end
        random_array = randperm(values.height * values.width);
        if random_array((start_x-1) * values.width+start_y) > values.mines
            break;
@@ -57,9 +61,7 @@ function initilize_game(start_x, start_y)
                 case 6
                     color = 'cyan';
             end
-            %values.img_mine = imread('pics/rg1024-sea-mine.png');
-            %values.img_mine=imresize(img, [50 50]);
-            handles.cb_txt = uicontrol(handles.fig_main,...
+            handles.cb_txt(i,j) = uicontrol(handles.fig_main,...
                 'Style','edit',...
                 'Unit','normalized',...
                 'Backgroundcolor','[.95 .95 .95]',...
@@ -74,6 +76,7 @@ function initilize_game(start_x, start_y)
     values.initilized = 1;
     delete_field;
     generate_buttons;
+    values.Game = 2;
     values.timer = timer(...
         'Name','timer',...
         'ExecutionMode','fixedRate',...
