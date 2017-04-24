@@ -4,11 +4,7 @@ function generate_buttons()
 
     global handles values;
     
-    if values.customizing
-        values.field_size = [0.9/values.width 0.8/values.height];
-    else
-        values.field_size = [0.9/values.width 0.8/values.height];
-    end
+    values.field_size = [0.9/values.width 0.8/values.height];
     
     for i=1:1:values.height
         for j=1:1:values.width

@@ -1,5 +1,3 @@
-Bei diesem Spiel geht es darum, durch logisches Denken/Kombinieren und teilweise raten alle versteckten Minen zu finden. Wichtig ist, sie zu finden, ohne sie auszulösen. 
-Dabei geht man wie folgt vor: Man wählt zunächst zufällig ein Feld aus, auf das man mit der linken Maustaste klickt. Nun erscheint (sofern man nicht auf eine Mine "tritt")
-eine Zahl von 1-8, die angibt, wieviele Minen sich in unmittelbarer Umgebung des Feldes (hiermit sind alle Felder gemeint, die mit einer Kante oder Ecke an das Feld angrenzen)
-befinden. Statt einer 0 erscheint ein leeres Feld. Manchmal "öffnen" sich sogar mehrere Felder bei einem Klick. "Vermutet" man auf einem Feld eine Mine, so kann man sie durch
-Rechtsklick als solche markieren. Das spiel ist gewonnen, wenn die letzten "übrig gebliebenen" Felder die Felder sind, unter denen sich die Minen befinden.
+Bei diesem Spiel geht es darum, durch logisches Denken/Kombinieren und teilweise raten alle versteckten Minen zu finden. Wichtig ist, sie zu finden, ohne sie auszulösen.
+
+Dabei geht man wie folgt vor: Man wählt zunächst zufällig ein Feld aus, auf das man mit der linken Maustaste klickt. Nun erscheint (sofern man nicht auf eine Mine "tritt") eine Zahl von 1-8, die angibt, wieviele Minen sich in unmittelbarer Umgebung des Feldes (hiermit sind alle Felder gemeint, die mit einer Kante oder Ecke an das Feld angrenzen) befinden. Statt einer 0 erscheint ein leeres Feld. Manchmal "öffnen" sich sogar mehrere Felder bei einem Klick. "Vermutet" man auf einem Feld eine Mine, so kann man sie durch Rechtsklick als solche markieren. Das spiel ist gewonnen, wenn die letzten "übrig gebliebenen" Felder die Felder sind, unter denen sich die Minen befinden.

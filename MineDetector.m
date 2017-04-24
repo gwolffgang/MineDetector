@@ -11,10 +11,11 @@ if nargin == 0
     % Red Flag (https://openclipart.org/detail/170768/red-flag) by ky1en1te
     
     values.img_mine = imread('rg1024-cartoon-sea-mine-2400px.png', 'png');
+
     % Cartoon Sea Mine (https://openclipart.org/detail/20846/cartoon-sea-mine) by rg1024
     
     set(0,'units','pixels');
-    values.screen_dimensions = get(0,'screensize');
+    values.screen_dimensions = get(0,'screensize') * 0.95;
     
     values.width = 9;
     values.height = 9;
@@ -43,7 +44,7 @@ if nargin == 0
         'Style','push',...
         'Unit','normalized',...
         'Position',[.475 .95 .05 .05],...
-        'Callback',[values.MD ' NewGame']);
+        'Callback',[values.MD ' NewGameButton']);
     handles.timer = uicontrol(handles.fig_main,...
         'Style','edit',...
         'Unit','normalized',...
@@ -74,13 +75,18 @@ else
         case 'Help'
             winopen('Help.txt');
         case 'NewGame'
+            screen = get(0,'screensize');
             values.field_size = min((values.screen_dimensions(1,3)*0.9 / values.width), (values.screen_dimensions(1,4)*0.9 / values.height));
-            set(handles.fig_main,'Position',[10 10 values.field_size*values.width values.field_size*values.height]);
+            set(handles.fig_main,'Position',[screen(1,3)-values.screen_dimensions(1,3) screen(1,4)-values.screen_dimensions(1,4) values.field_size*values.width values.field_size*values.height]);
             reset_values;
             delete_fields;
             generate_buttons;
             values.initilized = 0;
+        case 'NewGameButton'
+            values.customizing = false;
+            MineDetector('NewGame');
         case 'Values_Beginner'
+            values.customizing = false;
             values.width = 9;
             values.height = 9;
             values.mines = 10;
@@ -89,11 +95,13 @@ else
             values.customizing = true;
             MineDetector('NewGame');
         case 'Values_Expert'
+            values.customizing = false;
             values.width = 30;
             values.height = 16;
             values.mines = 99;
             MineDetector('NewGame');
         case 'Values_Intermediate'
+            values.customizing = false;
             values.width = 16;
             values.height = 16;
             values.mines = 40;
